@@ -1,2 +1,2 @@
 # islam-quiz
-android game to test your knowldge about quran, islam in a gamify way
+Gamify your knowledge and learning about islam in general
