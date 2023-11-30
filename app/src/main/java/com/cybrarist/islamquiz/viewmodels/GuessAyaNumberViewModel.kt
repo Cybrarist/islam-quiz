@@ -1,6 +1,8 @@
 package com.cybrarist.islamquiz.viewmodels
 
+import android.text.TextUtils
 import android.util.Log
+import android.widget.Toast
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -53,6 +55,13 @@ class GuessAyaNumberViewModel @Inject constructor(
     }
 
     fun check_answer(answer :String){
+
+        if (!TextUtils.isDigitsOnly(answer)){
+            return;
+        }
+
+
+
         if (answer != "" && answer.toInt() == random_ayah.value!!.order_in_surah){
             options_color.postValue(answer_right_color.value!!)
             current_score.postValue(current_score.value!!+1)

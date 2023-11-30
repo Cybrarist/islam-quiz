@@ -57,7 +57,6 @@ class GuessSoraPageViewModel @Inject constructor (private val surah_repository: 
             val preparing_soras= async {
                 temp.add(surah_repository.correct_surah(random_ayah.value!!.surah_id))
                 temp.addAll(surah_repository.wrong_sowar(random_ayah.value!!.surah_id, selected_parts_ids))
-                Log.d("all answers" , temp.toString())
                 temp.shuffle()
             }
             return@runBlocking temp
@@ -78,7 +77,6 @@ class GuessSoraPageViewModel @Inject constructor (private val surah_repository: 
     fun refresh_question() {
         //get the random question
 
-        Log.d("selected Parts", selected_parts_ids.toString())
         viewModelScope.launch (Dispatchers.IO) {
             if (selected_parts_ids.size == 0 )
                 random_ayah.postValue(ayah_repository.get_random_ayah())
@@ -107,7 +105,6 @@ class GuessSoraPageViewModel @Inject constructor (private val surah_repository: 
         var temp_color=text_color.value
         text_color.postValue(Color.White)
         if (answer == random_ayah.value!!.surah_id) {
-            Log.d("changing the options color" , "correct")
             options_color.postValue(answer_right_color.value)
             current_score.postValue(current_score.value!! + 1)
         }
