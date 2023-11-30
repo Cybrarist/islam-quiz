@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Islamic Quiz</string>
+    <string name="high_score">أعلى نتيجة : %1$d</string>
+    <string name="current_score">"النتيجة الحالية : %1$d"</string>
+    <string name="go_back">الرجوع</string>
+    <string name="choose_part">اختر الأجزاء للأسئلة</string>
+    <string name="enter_your_answer">أدخل إجابتك</string>
+</resources>
